@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom T-Shirt Order Form</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+fieldset { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; } legend { font-weight: bold; }
+.receipt { display: none; margin-top: 20px; padding: 10px; border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+<h1>Custom T-Shirt Order Form</h1>
+<form id="orderForm" onsubmit="return validateForm()">
+<fieldset>
+<legend>T-Shirt Details</legend>
+<label for="tagline">Tagline on the Shirt:</label>
+<input type="text" id="tagline" name="tagline" placeholder="Enter your tagline here" required maxlength="50">
+<br><br>
+<label for="color">Color:</label>
+<select id="color" name="color" required>
+<option value="" disabled selected>Select a color</option>
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="black">Black</option>
+<option value="white">White</option>
+</select>
+<br><br>
+<label for="size">Size:</label>
+<select id="size" name="size" required>
+<option value="" disabled selected>Select a size</option>
+<option value="small">Small</option>
+<option value="medium">Medium</option>
+<option value="large">Large</option>
+<option value="extra-large">Extra Large</option>
+
+</select>
+<br><br>
+<label for="quantity">Quantity:</label>
+<input type="number" id="quantity" name="quantity" min="1" max="100" placeholder="1" required>
+<br><br>
+<label for="delivery-date">Delivery Date:</label>
+<input type="date" id="delivery-date" name="delivery-date" required>
+</fieldset>
+<br>
+<fieldset>
+<legend>Delivery Details</legend>
+<label for="name">Recipient's Name:</label>
+<input type="text" id="name" name="name" placeholder="Full Name" required>
+<br><br>
+<label for="address">Address:</label>
+<input type="text" id="address" name="address" placeholder="Street Address" required>
+<br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="example@example.com" required>
+<br><br>
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+<br><br>
+</fieldset>
+<br>
+<label for="comments">Additional Comments:</label>
+<textarea id="comments" name="comments" rows="4" cols="50" placeholder="Any additional comments or special instructions" maxlength="200"></textarea>
+<br><br>
+<input type="submit" value="Submit Order">
+<input type="reset" value="Reset Form">
+</form>
+<div id="receipt" class="receipt">
+<h2>Order Receipt</h2>
+<p id="receiptDetails"></p>
+</div>
+
+</body>
+</html>
